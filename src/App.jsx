@@ -31,7 +31,8 @@ export default function Calculator() {
   let showValHandle = (e) => {
     let clickVal = e.target.firstChild.data;
     if (clickVal === "=") {
-      let ansStr = eval(inputVal) + "";
+      let evalute = eval(inputVal);
+      let ansStr = evalute + "";
       setInputVal(ansStr);
     } else if (clickVal === "C") {
       setInputVal("");
