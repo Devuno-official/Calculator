@@ -33,13 +33,13 @@ export default function Calculator() {
     if (clickVal === "=") {
       let evalute = eval(inputVal);
       let ansStr = evalute + "";
-      setInputVal(ansStr);
+      setInputVal(ansStr)
     } else if (clickVal === "C") {
       setInputVal("");
     } else if (clickVal === "<") {
       setInputVal(inputVal.substring(0, inputVal.length - 1));
     } else {
-      setInputVal(inputVal + clickVal);
+      setInputVal(inputVal + clickVal)
     }
   };
 
