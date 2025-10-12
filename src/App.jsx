@@ -33,32 +33,33 @@ export default function Calculator() {
     if (clickVal === "=") {
       let evalute = eval(inputVal);
       let ansStr = evalute + "";
-      setInputVal(ansStr)
+      setInputVal(ansStr);
     } else if (clickVal === "C") {
       setInputVal("");
     } else if (clickVal === "<") {
       setInputVal(inputVal.substring(0, inputVal.length - 1));
     } else {
-      setInputVal(inputVal + clickVal)
+      setInputVal(inputVal + clickVal);
     }
   };
 
   return (
     <Container>
-      <div className="w-full h-screen sm:h-auto bg-black rounded-none sm:rounded-3xl shadow-[0_0_20px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col">
-        <div className="flex flex-col p-0 sm:p-3 md:p-4 flex-1">
-          <input
-            type="text"
-            name="input"
-            id="input"
-            className="w-full h-32 sm:h-24 md:h-28 px-6 sm:px-4 md:px-6 
-                                bg-black
-                                text-right text-white text-4xl sm:text-4xl md:text-5xl font-light
-                                border-none outline-none mb-0 sm:mb-3 md:mb-4"
-            value={inputVal}
-            readOnly
-          />
-          <div className="grid grid-cols-4 gap-0 sm:gap-2 md:gap-3 flex-1">
+      <div className="w-full h-full bg-gradient-to-b from-gray-900 to-black sm:rounded-3xl overflow-hidden flex flex-col">
+        <div className="flex-1 sm:flex-none flex flex-col">
+          <div className="flex-1 sm:h-40 flex items-end justify-end px-6 pb-4 bg-gradient-to-b from-black/50 to-transparent backdrop-blur-sm">
+            <input
+              type="text"
+              name="input"
+              id="input"
+              className="w-full bg-transparent
+                        text-right text-white text-5xl sm:text-6xl font-light
+                        border-none outline-none"
+              value={inputVal}
+              readOnly
+            />
+          </div>
+          <div className="grid grid-cols-4 gap-3 p-4 bg-gradient-to-b from-gray-900/50 to-black/50 backdrop-blur-md">
             <Btn symbol={arr} showValHandle={showValHandle} />
           </div>
         </div>
